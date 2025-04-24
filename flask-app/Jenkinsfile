@@ -2,7 +2,7 @@
 pipeline {
     agent { docker { 
                image 'python:3.13.3-alpine3.21' 
-               args '-v C:/usr/src/app:/mnt/app'
+               args '-v /mnt/c/usr/src/app:/mnt/app'
             } 
     }
     stages {
