@@ -3,7 +3,7 @@ pipeline {
     agent { 
         docker {
             image 'python:3.13.3-alpine3.21' 
-            args '-v $HOME:/usr/src'
+            args '-v $HOME:/usr/src -w /usr/src/.jenkins/workspace/MyPipeline_main/'
         } 
     }
     stages {
