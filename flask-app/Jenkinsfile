@@ -1,9 +1,14 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'python:3.13.3-alpine3.21' } }
+    agent { 
+        docker {
+            image 'python:3.13.3-alpine3.21' 
+            args '-v $HOME:/usr/app'
+        } 
+    }
     stages {
         stage('build') {
-            steps {
+            steps dir(path: '/usr/app') {
                 sh 'python app.py'
             }
         }
