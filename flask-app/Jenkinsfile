@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('build') {
             steps dir(path: '/usr/src') {
-                sh 'python app.py'
+                sh 'cd /usr/src; ls -l'
             }
         }
     }
