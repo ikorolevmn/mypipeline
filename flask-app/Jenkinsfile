@@ -2,13 +2,13 @@ pipeline {
     agent {
         docker {
             image 'python:3.13.3-alpine3.21'
-            args '-v /mnt/c/Users/Igor/.jenkins/workspace:/mnt/app'
+//            args '-v /mnt/c/Users/Igor/.jenkins/workspace:/mnt/app'
         }
     }
     stages {
         stage('Build') {
             steps {
-                sh 'ls /mnt/app'
+                sh 'python --version'
             }
         }
     }
