@@ -13,7 +13,8 @@ pipeline {
         stage('Build') {
             steps {
                 //sh 'which docker'
-                sh 'python flask-app/app.py'
+                //sh 'python flask-app/app.py'
+                sh 'pip list'
             }
         }
     }
