@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        any {
+        docker {
             image 'python:3.13.3-alpine3.21'
 //            args '-v /mnt/c/Users/Igor/.jenkins/workspace:/mnt/app'
         }
@@ -12,8 +12,8 @@ pipeline {
 //        }
         stage('Build') {
             steps {
-                sh 'which docker'
-                //sh 'python --version'
+                //sh 'which docker'
+                sh 'python flask-app/app.py'
             }
         }
     }
