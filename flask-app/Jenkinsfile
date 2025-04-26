@@ -2,11 +2,11 @@
 pipeline {
     agent { any { image 'python:3.13.3-alpine3.21' } }
     stages {
-        stage('prepare') {
-            steps {
-                sh 'apt install docker-compose'
-            }
-        }
+//        stage('prepare') {
+//            steps {
+//                sh 'apt install docker-compose'
+//            }
+//        }
         stage('build') {
             steps {
                 sh '/usr/bin/docker-compose -f docker-compose.yml up -d'
