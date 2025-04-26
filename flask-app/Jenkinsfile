@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker {
+        any {
             image 'python:3.13.3-alpine3.21'
 //            args '-v /mnt/c/Users/Igor/.jenkins/workspace:/mnt/app'
         }
