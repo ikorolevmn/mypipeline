@@ -1,22 +1,10 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.13.3-alpine3.21'
-//            args '-v /mnt/c/Users/Igor/.jenkins/workspace:/mnt/app'
-        }
-    }
+    agent { any { image 'python:3.13.3-alpine3.21' } }
     stages {
-//        stage('Initialize'){
-//            def dockerHome = tool 'myDocker'
-//            env.PATH = "${dockerHome}/bin:${env.PATH}"
-//        }
-        stage('Build') {
+        stage('build') {
             steps {
-                //sh 'which docker'
-                //sh 'python flask-app/app.py'
-                sh 'pip list'
+                bat 'docker-compose -f docker-compose.yml up -d'
             }
         }
     }
 }
-
